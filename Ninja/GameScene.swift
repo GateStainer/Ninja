@@ -640,7 +640,7 @@ private extension NinjaGameScene {
     
     //current score
     func loadScore() {
-        let scoreBand = SKLabelNode(fontNamed: "HelveticaNeue-Bold")
+        let scoreBand = SKLabelNode(fontNamed: "Chalkduster")
         scoreBand.name = NinjaGameSceneChildName.ScoreName.rawValue
         scoreBand.text = "0"
         scoreBand.position = CGPoint(x: 130, y: DefinedScreenHeight / 2 - 200)
@@ -649,7 +649,7 @@ private extension NinjaGameScene {
         scoreBand.zPosition = NinjaGameSceneZposition.scoreZposition.rawValue
         scoreBand.horizontalAlignmentMode = .center
        
-        let scoreTitle = SKLabelNode(fontNamed: "HelveticaNeue")
+        let scoreTitle = SKLabelNode(fontNamed: "Chalkduster")
         scoreTitle.name = NinjaGameSceneChildName.ScoreName.rawValue
         scoreTitle.text = "Score"
         scoreTitle.position = CGPoint(x: 0, y: DefinedScreenHeight / 2 - 200)
@@ -666,22 +666,22 @@ private extension NinjaGameScene {
     
     //current blood
     func loadBlood(){
-        let bloodBand = SKLabelNode(fontNamed: "Helvetica")
+        let bloodBand = SKLabelNode(fontNamed: "Chalkduster")
         bloodBand.name = NinjaGameSceneChildName.BloodName.rawValue
         bloodBand.text = "3"
-        bloodBand.position = CGPoint(x: 420, y: DefinedScreenHeight / 2 - 230)
+        bloodBand.position = CGPoint(x: 430, y: DefinedScreenHeight / 2 - 230)
         bloodBand.fontColor = SKColor.red
         bloodBand.fontSize = 50
         bloodBand.zPosition = NinjaGameSceneZposition.bloodZposition.rawValue
         bloodBand.horizontalAlignmentMode = .right
         
-        let bloodTitle = SKLabelNode(fontNamed: "Helvetica")
+        let bloodTitle = SKLabelNode(fontNamed: "Chalkduster")
         bloodTitle.text = "Blood: "
         bloodTitle.name = NinjaGameSceneChildName.BloodName.rawValue
         
-        bloodTitle.position = CGPoint(x: 380, y: DefinedScreenHeight / 2 - 230)
+        bloodTitle.position = CGPoint(x: 390, y: DefinedScreenHeight / 2 - 230)
         bloodTitle.fontColor = SKColor.red
-        bloodTitle.fontSize = 50
+        bloodTitle.fontSize = 45
         bloodTitle.zPosition = NinjaGameSceneZposition.bloodZposition.rawValue
         bloodTitle.horizontalAlignmentMode = .right
         
@@ -692,12 +692,12 @@ private extension NinjaGameScene {
     
     
     func loadTip() {
-        let tip = SKLabelNode(fontNamed: "HelveticaNeue-Bold")
+        let tip = SKLabelNode(fontNamed: "Chalkduster")
         tip.name = NinjaGameSceneChildName.TipName.rawValue
         tip.text = "Press to prolong the stick"
         tip.position = CGPoint(x: 0, y: DefinedScreenHeight / 2 - 850)
         tip.fontColor = SKColor.lightGray
-        tip.fontSize = 80
+        tip.fontSize = 60
         tip.zPosition = NinjaGameSceneZposition.tipZposition.rawValue
         tip.horizontalAlignmentMode = .center
         
@@ -715,7 +715,7 @@ private extension NinjaGameScene {
         node.alpha = 0
         addChild(node)
         
-        let label = SKLabelNode(fontNamed: "HelveticaNeue-Bold")
+        let label = SKLabelNode(fontNamed: "Chalkduster")
         label.text = "Game Over"
         label.fontColor = SKColor.red
         label.fontSize = 150
@@ -879,7 +879,7 @@ private extension NinjaGameScene {
         }
         
         guard let _ = childNode(withName: NinjaGameSceneChildName.PerfectName.rawValue) as! SKLabelNode? else {
-            let perfect = SKLabelNode(fontNamed: "Arial")
+            let perfect = SKLabelNode(fontNamed: "Chalkduster")
             perfect.text = "Perfect +1"
             perfect.name = NinjaGameSceneChildName.PerfectName.rawValue
             perfect.position = CGPoint(x: 0, y: -100)
@@ -895,7 +895,7 @@ private extension NinjaGameScene {
         }
         
     }
-    /*
+    
     func loadPerfect_3Points() {
         defer {
             let perfect = childNode(withName: NinjaGameSceneChildName.PerfectName.rawValue) as! SKLabelNode?
@@ -921,7 +921,6 @@ private extension NinjaGameScene {
         }
         
     }
- */
     
 
 }
