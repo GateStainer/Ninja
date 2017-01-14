@@ -1,3 +1,11 @@
+//
+//  TriangleLayer.swift
+//  Ninja
+//
+//  Created by Push on 11/21/16.
+//  Copyright © 2016 Apple inc. All rights reserved.
+//
+
 
 import UIKit
 

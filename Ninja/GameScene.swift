@@ -895,7 +895,7 @@ private extension NinjaGameScene {
         }
         
     }
-    
+    /*
     func loadPerfect_3Points() {
         defer {
             let perfect = childNode(withName: NinjaGameSceneChildName.PerfectName.rawValue) as! SKLabelNode?
@@ -921,6 +921,7 @@ private extension NinjaGameScene {
         }
         
     }
+ */
     
 
 }

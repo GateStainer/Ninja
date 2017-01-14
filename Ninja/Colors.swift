@@ -1,9 +1,9 @@
 //
 //  Colors.swift
-//  SBLoader
+//  Ninja
 //
-//  Created by Satraj Bambra on 2015-03-20.
-//  Copyright (c) 2015 Satraj Bambra. All rights reserved.
+//  Created by Push on 11/21/16.
+//  Copyright © 2016 Apple inc. All rights reserved.
 //
 
 import UIKit
