@@ -35,6 +35,13 @@ func randomInRange(_ range: ClosedRange<Int>) -> Int {
 }
 
 
+func random(_ range: ClosedRange<CGFloat>) -> CGFloat {
+    let count = (range.upperBound - range.lowerBound)
+    let my_float = CGFloat(arc4random_uniform(UInt32(count)))
+    return  my_float + range.lowerBound
+}
+
+
 
 //Scene class
 class NinjaGameScene: SKScene, SKPhysicsContactDelegate {
@@ -165,8 +172,10 @@ class NinjaGameScene: SKScene, SKPhysicsContactDelegate {
     
     lazy var monsterAction:SKAction = {
         
+        
+        
         let action1 = SKAction.moveBy(x:0, y:800, duration: 3)
-        let action2 = SKAction.moveBy(x:0, y:-800, duration: 3)
+        let action2 = SKAction.moveBy(x:0, y:-900, duration: 3)
 
 
         let action = SKAction.sequence([action1,action2])
@@ -824,7 +833,7 @@ private extension NinjaGameScene {
         monster.zPosition = NinjaGameSceneZposition.monsterZposition.rawValue
         monster.name = NinjaGameSceneChildName.MonsterName.rawValue
         monster.anchorPoint = CGPoint(x: 0.5, y: 0.5)
-        monster.position = CGPoint(x: ((leftStack?.position.x)! + (rightStack?.position.x)!) / 2, y: -DefinedScreenHeight / 2 + 100)
+        monster.position = CGPoint(x: ((leftStack?.position.x)! + (rightStack?.position.x)!) / 2, y: (-DefinedScreenHeight / 2) + random(0.0...300.0))
         
         addChild(monster)
         monster.run(monsterAction, withKey: NinjaGameSceneActionKey.MonsterAction.rawValue)
@@ -895,7 +904,7 @@ private extension NinjaGameScene {
         }
         
     }
-    
+    /*
     func loadPerfect_3Points() {
         defer {
             let perfect = childNode(withName: NinjaGameSceneChildName.PerfectName.rawValue) as! SKLabelNode?
@@ -921,6 +930,7 @@ private extension NinjaGameScene {
         }
         
     }
+ */
     
 
 }
