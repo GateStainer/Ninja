@@ -1,3 +1,7 @@
+
+
+
+
 //
 //  GameScene.swift
 //  Ninja
@@ -10,9 +14,11 @@
 
 
 
+
+//游戏主要逻辑代码
+
 import SpriteKit
 import GameplayKit
-
 
 
 //用于菜单项的渐隐和渐出
@@ -29,8 +35,6 @@ extension SKAction {
         return SKAction.group([fadeOut, moveOut])
     }
 }
-
-
 
 
 
@@ -64,16 +68,27 @@ class NinjaGameScene: SKScene, SKPhysicsContactDelegate {
    
     
     let StackHeight:CGFloat = 400.0
+    
     let StackMaxWidth:CGFloat = 300.0
+    
     let StackMinWidth:CGFloat = 100.0
+    
     let gravity:CGFloat = -100.0
+    
     let StackGapMinWidth:Int = 80
+    
     let HeroSpeed:CGFloat = 500
+    
     let MonsterLow:CGFloat = 100
+    
     let MonsterHigh:CGFloat = 600
+    
     var isBegin = false                               //human begins to move
+    
     var isEnd = false                                 //human stops moving
+    
     var nextLeftStartX:CGFloat = 0
+    
     var stickHeight:CGFloat = 0
     
     let StoreScoreName = "com.Ninja.score"
@@ -105,6 +120,8 @@ class NinjaGameScene: SKScene, SKPhysicsContactDelegate {
             }
         }
     }
+    
+    
     
     
     //会根据score的大小做出加载不同的背景，产生monster等动作
@@ -171,8 +188,12 @@ class NinjaGameScene: SKScene, SKPhysicsContactDelegate {
     }
     
     
+    
+    
     var leftStack:SKShapeNode?
     var rightStack:SKShapeNode?
+    
+    
     
     
     //游戏区域
@@ -191,8 +212,6 @@ class NinjaGameScene: SKScene, SKPhysicsContactDelegate {
         
         let action1 = SKAction.moveBy(x:0, y:800, duration: 3)
         let action2 = SKAction.moveBy(x:0, y:-900, duration: 3)
-
-
         let action = SKAction.sequence([action1,action2])
         return SKAction.repeatForever(action)
     }()
@@ -209,6 +228,7 @@ class NinjaGameScene: SKScene, SKPhysicsContactDelegate {
         
         
     }()
+    
     
     
     lazy var birdAction:SKAction = {
@@ -230,6 +250,7 @@ class NinjaGameScene: SKScene, SKPhysicsContactDelegate {
         
         return SKAction.repeatForever(action)
     }()
+    
     
     
     //Ninja的移动
@@ -275,9 +296,11 @@ class NinjaGameScene: SKScene, SKPhysicsContactDelegate {
         //physicsWorld.contactDelegate = self
     }
     
+    
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
     
     
     override func didMove(to view: SKView) {
@@ -352,11 +375,17 @@ class NinjaGameScene: SKScene, SKPhysicsContactDelegate {
     func start() {
         
         loadBackground(1,layer: 0.0)
+        
         loadScoreBackground()
+        
         loadScore()
+        
         loadBlood()
+        
         loadTip()
+        
         loadGameOverLayer()
+        
         loadBird()
         
         
@@ -397,7 +426,9 @@ class NinjaGameScene: SKScene, SKPhysicsContactDelegate {
         
         /*
         hero?.physicsBody?.collisionBitMask = 1
+         
         hero?.physicsBody?.contactTestBitMask = 1
+         
         hero?.physicsBody?.categoryBitMask = 1
  
  
@@ -574,6 +605,7 @@ class NinjaGameScene: SKScene, SKPhysicsContactDelegate {
         return true
     }
 
+    
     fileprivate func checkTouchMidStack() {
         let stick = childNode(withName: NinjaGameSceneChildName.StickName.rawValue) as! SKSpriteNode
         let stackMid = rightStack!.childNode(withName: NinjaGameSceneChildName.StackMidName.rawValue) as! SKShapeNode

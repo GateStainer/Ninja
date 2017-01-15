@@ -112,7 +112,9 @@ class GameViewController: UIViewController, HolderViewDelegate {
         let scene = NinjaGameScene(size:CGSize(width: DefinedScreenWidth, height: DefinedScreenHeight))
         
         let skView = self.view as! SKView
+        
         skView.showsFPS = false
+        
         skView.showsNodeCount = false
         
         
@@ -121,6 +123,7 @@ class GameViewController: UIViewController, HolderViewDelegate {
         
         /* Set the scale mode to scale to fit the window */
         scene.scaleMode = .aspectFill
+        
         skView.presentScene(scene)
         
     }

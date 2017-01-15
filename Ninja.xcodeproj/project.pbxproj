@@ -35,6 +35,8 @@
 		D9D59B241E2B60A80026D653 /* bird1.png in Resources */ = {isa = PBXBuildFile; fileRef = D9D59B1D1E2B60A80026D653 /* bird1.png */; };
 		D9D59B261E2B6C4C0026D653 /* MenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9D59B251E2B6C4C0026D653 /* MenuController.swift */; };
 		D9D59B281E2B6C970026D653 /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9D59B271E2B6C970026D653 /* Button.swift */; };
+		D9D59B2A1E2B74CB0026D653 /* animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9D59B291E2B74CB0026D653 /* animation.swift */; };
+		D9D59B2C1E2B796A0026D653 /* tip.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9D59B2B1E2B796A0026D653 /* tip.swift */; };
 		D9D7BDEB1DFEC2C5000CB207 /* button_retry_down.png in Resources */ = {isa = PBXBuildFile; fileRef = D9D7BDEA1DFEC2C5000CB207 /* button_retry_down.png */; };
 		D9D7BDED1DFEC9E0000CB207 /* background2.png in Resources */ = {isa = PBXBuildFile; fileRef = D9D7BDEC1DFEC9E0000CB207 /* background2.png */; };
 		D9D7BDFD1DFED656000CB207 /* background7.png in Resources */ = {isa = PBXBuildFile; fileRef = D9D7BDF81DFED656000CB207 /* background7.png */; };
@@ -78,6 +80,8 @@
 		D9D59B1D1E2B60A80026D653 /* bird1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bird1.png; sourceTree = "<group>"; };
 		D9D59B251E2B6C4C0026D653 /* MenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuController.swift; sourceTree = "<group>"; };
 		D9D59B271E2B6C970026D653 /* Button.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
+		D9D59B291E2B74CB0026D653 /* animation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = animation.swift; sourceTree = "<group>"; };
+		D9D59B2B1E2B796A0026D653 /* tip.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = tip.swift; sourceTree = "<group>"; };
 		D9D7BDEA1DFEC2C5000CB207 /* button_retry_down.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button_retry_down.png; sourceTree = "<group>"; };
 		D9D7BDEC1DFEC9E0000CB207 /* background2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background2.png; sourceTree = "<group>"; };
 		D9D7BDF81DFED656000CB207 /* background7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background7.png; sourceTree = "<group>"; };
@@ -110,6 +114,8 @@
 				3EAF9EBD1E29453500EE4797 /* ArcLayer.swift */,
 				3EAF9EBE1E29453500EE4797 /* OvalLayer.swift */,
 				3EAF9EBF1E29453500EE4797 /* Colors.swift */,
+				D9D59B291E2B74CB0026D653 /* animation.swift */,
+				D9D59B2B1E2B796A0026D653 /* tip.swift */,
 			);
 			name = animation;
 			sourceTree = "<group>";
@@ -134,6 +140,8 @@
 		D97024561DE3151D0075CB6F /* Ninja */ = {
 			isa = PBXGroup;
 			children = (
+				3EAF9EB91E29452500EE4797 /* animation */,
+				D970245B1DE315AE0075CB6F /* Scene */,
 				D97024571DE315660075CB6F /* Assets */,
 				D970244C1DE314BF0075CB6F /* AppDelegate.swift */,
 				D970244E1DE314CC0075CB6F /* LaunchScreen.storyboard */,
@@ -150,7 +158,6 @@
 		D97024571DE315660075CB6F /* Assets */ = {
 			isa = PBXGroup;
 			children = (
-				3EAF9EB91E29452500EE4797 /* animation */,
 				D970245A1DE315860075CB6F /* Sks */,
 				D97024591DE3157E0075CB6F /* Sounds */,
 				D97024581DE3156F0075CB6F /* Images */,
@@ -183,7 +190,6 @@
 				D93D479C1DFEAEEA0013D3AE /* rabbit1.png */,
 				D9B91B411DE7D929007975F4 /* button_retry_up.png */,
 				D97024681DE320F20075CB6F /* background1.png */,
-				D970245B1DE315AE0075CB6F /* Scene */,
 			);
 			name = Images;
 			sourceTree = "<group>";
@@ -312,7 +318,9 @@
 				D970244D1DE314BF0075CB6F /* AppDelegate.swift in Sources */,
 				3EAF9EC01E29453500EE4797 /* TriangleLayer.swift in Sources */,
 				D9D59B261E2B6C4C0026D653 /* MenuController.swift in Sources */,
+				D9D59B2C1E2B796A0026D653 /* tip.swift in Sources */,
 				3EAF9EC71E2945F600EE4797 /* ViewController.swift in Sources */,
+				D9D59B2A1E2B74CB0026D653 /* animation.swift in Sources */,
 				D970244B1DE314B90075CB6F /* GameViewController.swift in Sources */,
 				3EAF9EC31E29453500EE4797 /* ArcLayer.swift in Sources */,
 				D9C6AD431DE322330066BF01 /* Define.swift in Sources */,
