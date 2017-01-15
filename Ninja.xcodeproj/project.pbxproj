@@ -33,6 +33,8 @@
 		D9D59B221E2B60A80026D653 /* bird3.png in Resources */ = {isa = PBXBuildFile; fileRef = D9D59B1B1E2B60A80026D653 /* bird3.png */; };
 		D9D59B231E2B60A80026D653 /* bird2.png in Resources */ = {isa = PBXBuildFile; fileRef = D9D59B1C1E2B60A80026D653 /* bird2.png */; };
 		D9D59B241E2B60A80026D653 /* bird1.png in Resources */ = {isa = PBXBuildFile; fileRef = D9D59B1D1E2B60A80026D653 /* bird1.png */; };
+		D9D59B261E2B6C4C0026D653 /* MenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9D59B251E2B6C4C0026D653 /* MenuController.swift */; };
+		D9D59B281E2B6C970026D653 /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9D59B271E2B6C970026D653 /* Button.swift */; };
 		D9D7BDEB1DFEC2C5000CB207 /* button_retry_down.png in Resources */ = {isa = PBXBuildFile; fileRef = D9D7BDEA1DFEC2C5000CB207 /* button_retry_down.png */; };
 		D9D7BDED1DFEC9E0000CB207 /* background2.png in Resources */ = {isa = PBXBuildFile; fileRef = D9D7BDEC1DFEC9E0000CB207 /* background2.png */; };
 		D9D7BDFD1DFED656000CB207 /* background7.png in Resources */ = {isa = PBXBuildFile; fileRef = D9D7BDF81DFED656000CB207 /* background7.png */; };
@@ -74,6 +76,8 @@
 		D9D59B1B1E2B60A80026D653 /* bird3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bird3.png; sourceTree = "<group>"; };
 		D9D59B1C1E2B60A80026D653 /* bird2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bird2.png; sourceTree = "<group>"; };
 		D9D59B1D1E2B60A80026D653 /* bird1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bird1.png; sourceTree = "<group>"; };
+		D9D59B251E2B6C4C0026D653 /* MenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuController.swift; sourceTree = "<group>"; };
+		D9D59B271E2B6C970026D653 /* Button.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
 		D9D7BDEA1DFEC2C5000CB207 /* button_retry_down.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button_retry_down.png; sourceTree = "<group>"; };
 		D9D7BDEC1DFEC9E0000CB207 /* background2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background2.png; sourceTree = "<group>"; };
 		D9D7BDF81DFED656000CB207 /* background7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background7.png; sourceTree = "<group>"; };
@@ -137,6 +141,8 @@
 				3EAF9EC61E2945F600EE4797 /* ViewController.swift */,
 				D970244A1DE314B90075CB6F /* GameViewController.swift */,
 				D970245C1DE315EB0075CB6F /* Info.plist */,
+				D9D59B251E2B6C4C0026D653 /* MenuController.swift */,
+				D9D59B271E2B6C970026D653 /* Button.swift */,
 			);
 			name = Ninja;
 			sourceTree = "<group>";
@@ -305,12 +311,14 @@
 				3EAF9EC51E29453500EE4797 /* Colors.swift in Sources */,
 				D970244D1DE314BF0075CB6F /* AppDelegate.swift in Sources */,
 				3EAF9EC01E29453500EE4797 /* TriangleLayer.swift in Sources */,
+				D9D59B261E2B6C4C0026D653 /* MenuController.swift in Sources */,
 				3EAF9EC71E2945F600EE4797 /* ViewController.swift in Sources */,
 				D970244B1DE314B90075CB6F /* GameViewController.swift in Sources */,
 				3EAF9EC31E29453500EE4797 /* ArcLayer.swift in Sources */,
 				D9C6AD431DE322330066BF01 /* Define.swift in Sources */,
 				D97024491DE314AC0075CB6F /* GameScene.swift in Sources */,
 				3EAF9EC11E29453500EE4797 /* RectangleLayer.swift in Sources */,
+				D9D59B281E2B6C970026D653 /* Button.swift in Sources */,
 				3EAF9EC41E29453500EE4797 /* OvalLayer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

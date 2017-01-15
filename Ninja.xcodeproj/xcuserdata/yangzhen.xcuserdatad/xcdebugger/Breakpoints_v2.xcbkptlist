@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Ninja/GameScene.swift"
-            timestampString = "506160788.741181"
+            timestampString = "506162585.262874"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "622"
-            endingLineNumber = "622"
+            startingLineNumber = "639"
+            endingLineNumber = "639"
             landmarkName = "heroGo(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Ninja/GameScene.swift"
-            timestampString = "506160788.741181"
+            timestampString = "506162585.262874"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "623"
-            endingLineNumber = "623"
+            startingLineNumber = "640"
+            endingLineNumber = "640"
             landmarkName = "heroGo(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -42,11 +42,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Ninja/GameScene.swift"
-            timestampString = "506160788.741181"
+            timestampString = "506162585.262874"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "326"
-            endingLineNumber = "326"
+            startingLineNumber = "337"
+            endingLineNumber = "337"
             landmarkName = "touchesEnded(_:with:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -58,11 +58,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Ninja/GameScene.swift"
-            timestampString = "506160788.741181"
+            timestampString = "506162585.262874"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "99"
-            endingLineNumber = "99"
+            startingLineNumber = "106"
+            endingLineNumber = "106"
             landmarkName = "NinjaGameScene"
             landmarkType = "3">
             <Locations>
@@ -136,11 +136,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Ninja/GameScene.swift"
-            timestampString = "506160788.741181"
+            timestampString = "506162585.262874"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "100"
-            endingLineNumber = "100"
+            startingLineNumber = "107"
+            endingLineNumber = "107"
             landmarkName = "NinjaGameScene"
             landmarkType = "3">
             <Locations>
@@ -214,11 +214,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Ninja/GameScene.swift"
-            timestampString = "506160788.741181"
+            timestampString = "506162585.262874"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "625"
-            endingLineNumber = "625"
+            startingLineNumber = "642"
+            endingLineNumber = "642"
             landmarkName = "heroGo(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -230,11 +230,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Ninja/GameScene.swift"
-            timestampString = "506160788.741181"
+            timestampString = "506162585.262874"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "539"
-            endingLineNumber = "539"
+            startingLineNumber = "554"
+            endingLineNumber = "554"
             landmarkName = "NinjaGameScene"
             landmarkType = "3">
          </BreakpointContent>
@@ -246,11 +246,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Ninja/GameScene.swift"
-            timestampString = "506160788.741181"
+            timestampString = "506162585.262874"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "588"
-            endingLineNumber = "588"
+            startingLineNumber = "603"
+            endingLineNumber = "603"
             landmarkName = "checkTouchMidStack()"
             landmarkType = "7">
          </BreakpointContent>
@@ -262,11 +262,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Ninja/GameScene.swift"
-            timestampString = "506160788.741181"
+            timestampString = "506162585.262874"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "778"
-            endingLineNumber = "778"
+            startingLineNumber = "795"
+            endingLineNumber = "795"
             landmarkName = "loadBlood()"
             landmarkType = "7">
          </BreakpointContent>
@@ -278,11 +278,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Ninja/GameScene.swift"
-            timestampString = "506160788.741181"
+            timestampString = "506162585.262874"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "947"
-            endingLineNumber = "947"
+            startingLineNumber = "964"
+            endingLineNumber = "964"
             landmarkName = "loadMonster()"
             landmarkType = "7">
          </BreakpointContent>
@@ -294,11 +294,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Ninja/GameScene.swift"
-            timestampString = "506160788.741181"
+            timestampString = "506162585.262874"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "153"
-            endingLineNumber = "153"
+            startingLineNumber = "164"
+            endingLineNumber = "164"
             landmarkName = "NinjaGameScene"
             landmarkType = "3">
          </BreakpointContent>
@@ -310,11 +310,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Ninja/GameScene.swift"
-            timestampString = "506160788.741181"
+            timestampString = "506162585.262874"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "424"
-            endingLineNumber = "424"
+            startingLineNumber = "439"
+            endingLineNumber = "439"
             landmarkName = "didBegin(_:)"
             landmarkType = "7">
          </BreakpointContent>
