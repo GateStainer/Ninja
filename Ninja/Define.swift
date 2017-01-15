@@ -23,6 +23,7 @@ enum NinjaGameSceneChildName : String {
     case StackMidName = "stack_mid"
     case ScoreName = "score"
     case MonsterName = "monster"
+    case SecondMonsterName = "second_monster"
     case TipName = "tip"
     case PerfectName = "perfect"
     case GameOverLayerName = "over"
@@ -50,6 +51,8 @@ enum NinjaGameSceneZposition: CGFloat {
 enum NinjaGameSceneActionKey: String {
     case WalkAction = "walk"
     case MonsterAction = "monster_action"
+    case SecondMonsterAction = "second_monster_action"
+    case MonsterMoveAction = "monster_move_action"
     case StickGrowAudioAction = "stick_grow_audio"
     case StickGrowAction = "stick_grow"
     case HeroScaleAction = "hero_scale"

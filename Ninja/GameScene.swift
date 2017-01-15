@@ -182,6 +182,20 @@ class NinjaGameScene: SKScene, SKPhysicsContactDelegate {
         return SKAction.repeatForever(action)
     }()
     
+    
+    
+    lazy var secondmonsterAction:SKAction = {
+        
+        let action1 = SKAction.moveBy(x:0, y:-900,duration:2.5)
+        let action2 = SKAction.moveBy(x:0, y:800, duration:2.5)
+        
+        let action = SKAction.sequence([action1,action2])
+        return SKAction.repeatForever(action)
+        
+        
+    }()
+    
+    
     lazy var walkAction:SKAction = {
         var textures:[SKTexture] = []
         for i in 0...1 {
@@ -195,6 +209,26 @@ class NinjaGameScene: SKScene, SKPhysicsContactDelegate {
         
         return SKAction.repeatForever(action)
     }()
+    
+    
+    
+    
+    lazy var monster_moveAction:SKAction = {
+        var textures:[SKTexture] = []
+        for i in 0...1 {
+            let texture1 = SKTexture(imageNamed: "monkey\(i + 1).png")
+            let texture2 = SKTexture(imageNamed: "monkey\(i + 2).png")
+            textures.append(texture1)
+            textures.append(texture2)
+        }
+        
+        let action = SKAction.animate(with: textures, timePerFrame: 0.1, resize: true, restore: true)
+        
+        return SKAction.repeatForever(action)
+    }()
+
+    
+    
 
     
     
@@ -373,6 +407,11 @@ class NinjaGameScene: SKScene, SKPhysicsContactDelegate {
             
                 let monster = childNode(withName: NinjaGameSceneChildName.MonsterName.rawValue) as! SKSpriteNode
                 monster.run(SKAction.fadeAlpha(to: 0, duration: 0.3))
+                
+                if let monster2 = childNode(withName: NinjaGameSceneChildName.SecondMonsterName.rawValue)
+                {
+                    monster2.run(SKAction.fadeAlpha(to: 0, duration: 0.3))
+                }
             
             }
             else
@@ -386,6 +425,13 @@ class NinjaGameScene: SKScene, SKPhysicsContactDelegate {
                 monster.removeAllActions()
             
             
+                
+                if let monster2 = childNode(withName: NinjaGameSceneChildName.SecondMonsterName.rawValue)
+                {
+                    monster2.removeAllActions()
+                }
+                
+                
                 //hero.physicsBody?.affectedByGravity = true
             
                 gameOver = true
@@ -575,6 +621,13 @@ class NinjaGameScene: SKScene, SKPhysicsContactDelegate {
             hero.removeAction(forKey: NinjaGameSceneActionKey.WalkAction.rawValue)
             let monster = self.childNode(withName: NinjaGameSceneChildName.MonsterName.rawValue ) as? SKSpriteNode
             monster?.removeFromParent()
+            
+            
+            if let monster2 = self.childNode(withName: NinjaGameSceneChildName.SecondMonsterName.rawValue)
+            {
+                monster2.removeFromParent()
+            }
+            
             
             self.moveStackAndCreateNew()
             
@@ -773,6 +826,11 @@ private extension NinjaGameScene {
                 
                 self.loadMonster()
                 
+                if(self.score >= 5)
+                {
+                    self.loadMonster2()
+                }
+                
             })
             
         }
@@ -828,8 +886,8 @@ private extension NinjaGameScene {
     func loadMonster() {
         //let monster = SKSpriteNode(color: SKColor.red, size: CGSize(width:50, height:50))
         let monster = SKSpriteNode(imageNamed: "monkey1")
-        monster.size.width = 120
-        monster.size.height = 120
+        monster.size.width = 90
+        monster.size.height = 90
         monster.zPosition = NinjaGameSceneZposition.monsterZposition.rawValue
         monster.name = NinjaGameSceneChildName.MonsterName.rawValue
         monster.anchorPoint = CGPoint(x: 0.5, y: 0.5)
@@ -837,6 +895,10 @@ private extension NinjaGameScene {
         
         addChild(monster)
         monster.run(monsterAction, withKey: NinjaGameSceneActionKey.MonsterAction.rawValue)
+        
+        
+        monster.run(monster_moveAction, withKey: NinjaGameSceneActionKey.MonsterMoveAction.rawValue)
+        
         
         monster.physicsBody = SKPhysicsBody(rectangleOf: CGSize(width: (monster.size.width/2-10), height: (monster.size.height/2)-10))
         
@@ -861,7 +923,45 @@ private extension NinjaGameScene {
         
     }
 
-    
+    func loadMonster2() {
+        
+        
+        let monster = SKSpriteNode(imageNamed: "monkey1")
+        monster.size.width = 120
+        monster.size.height = 120
+        monster.zPosition = NinjaGameSceneZposition.monsterZposition.rawValue
+        monster.name = NinjaGameSceneChildName.SecondMonsterName.rawValue
+        monster.anchorPoint = CGPoint(x: 0.5, y: 0.5)
+        monster.position = CGPoint(x: ((leftStack?.position.x)! + (rightStack?.position.x)!) / 2, y: (-DefinedScreenHeight / 2) + random(400.0...800.0))
+        
+        addChild(monster)
+        monster.run(secondmonsterAction, withKey: NinjaGameSceneActionKey.SecondMonsterAction.rawValue)
+        
+        
+        monster.run(monster_moveAction, withKey: NinjaGameSceneActionKey.MonsterMoveAction.rawValue)
+        
+        
+        monster.physicsBody = SKPhysicsBody(rectangleOf: CGSize(width: (monster.size.width/2-10), height: (monster.size.height/2)-10))
+        
+        
+        
+        monster.physicsBody?.isDynamic = true
+        
+        
+        monster.physicsBody?.affectedByGravity = false
+        
+        monster.physicsBody?.categoryBitMask = monsterCategory
+        
+        
+        /*monster.physicsBody?.collisionBitMask = 0
+         monster.physicsBody?.affectedByGravity = false
+         monster.physicsBody?.contactTestBitMask = 2
+         */
+        
+        
+        monster.physicsBody?.usesPreciseCollisionDetection = true
+        
+    }
     
     
     func loadStick() -> SKSpriteNode {
