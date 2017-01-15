@@ -14,6 +14,8 @@ import SpriteKit
 import GameplayKit
 
 
+
+//用于菜单项的渐隐和渐出
 extension SKAction {
     class func moveDistance(_ distance:CGVector, fadeInWithDuration duration:TimeInterval) -> SKAction {
         let fadeIn = SKAction.fadeIn(withDuration: duration)
@@ -32,13 +34,15 @@ extension SKAction {
 
 
 
-//generate a random Int in range
+//在一定范围内生成随机的Int数
 func randomInRange(_ range: ClosedRange<Int>) -> Int {
     let count = UInt32(range.upperBound - range.lowerBound)
     return  Int(arc4random_uniform(count)) + range.lowerBound
 }
 
 
+
+//在一定范围内生成随机的CGFloat数
 func random(_ range: ClosedRange<CGFloat>) -> CGFloat {
     let count = (range.upperBound - range.lowerBound)
     let my_float = CGFloat(arc4random_uniform(UInt32(count)))
@@ -47,7 +51,7 @@ func random(_ range: ClosedRange<CGFloat>) -> CGFloat {
 
 
 
-//Scene class
+//Scene类
 class NinjaGameScene: SKScene, SKPhysicsContactDelegate {
     
     
@@ -76,10 +80,13 @@ class NinjaGameScene: SKScene, SKPhysicsContactDelegate {
 
     
     
+    
+    //用于Ninja和monster的碰撞检测
     let heroCatagory: UInt32 = 0x1 << 0
     let monsterCategory: UInt32 = 0x1 << 1
     
     
+    //判断是否开始碰撞
     var collision_start = false
     
     
@@ -99,6 +106,8 @@ class NinjaGameScene: SKScene, SKPhysicsContactDelegate {
         }
     }
     
+    
+    //会根据score的大小做出加载不同的背景，产生monster等动作
     var score:Int = 0 {
         willSet {
             let scoreBand = childNode(withName: NinjaGameSceneChildName.ScoreName.rawValue) as? SKLabelNode
@@ -143,6 +152,8 @@ class NinjaGameScene: SKScene, SKPhysicsContactDelegate {
         }
     }
     
+    
+    //根据当前血量做出动作
     var blood:Int = 3{
         willSet{
             let bloodBand = childNode(withName: NinjaGameSceneChildName.BloodName.rawValue) as? SKLabelNode
@@ -164,7 +175,7 @@ class NinjaGameScene: SKScene, SKPhysicsContactDelegate {
     var rightStack:SKShapeNode?
     
     
-    //area for the game
+    //游戏区域
     lazy var playAbleRect:CGRect = {
         let maxAspectRatio:CGFloat = 16.0/9.0
         let maxAspectRatioWidth = self.size.height / maxAspectRatio
@@ -173,7 +184,7 @@ class NinjaGameScene: SKScene, SKPhysicsContactDelegate {
     }()
     
     
-    
+    //monster的移动
     lazy var monsterAction:SKAction = {
         
         
@@ -221,7 +232,7 @@ class NinjaGameScene: SKScene, SKPhysicsContactDelegate {
     }()
     
     
-    
+    //Ninja的移动
     lazy var walkAction:SKAction = {
         var textures:[SKTexture] = []
         for i in 0...1 {
@@ -276,7 +287,7 @@ class NinjaGameScene: SKScene, SKPhysicsContactDelegate {
     
     
     
-    
+    //开始按住屏幕
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         guard !gameOver else {
             let gameOverLayer = childNode(withName: NinjaGameSceneChildName.GameOverLayerName.rawValue) as SKNode?
@@ -311,7 +322,7 @@ class NinjaGameScene: SKScene, SKPhysicsContactDelegate {
     }
 
     
-    
+    //结束按住屏幕
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         if isBegin && !isEnd {
             isEnd  = true
@@ -337,7 +348,7 @@ class NinjaGameScene: SKScene, SKPhysicsContactDelegate {
     }
 
     
-    
+    //加载所有Node，开始游戏
     func start() {
         
         loadBackground(1,layer: 0.0)
@@ -414,6 +425,10 @@ class NinjaGameScene: SKScene, SKPhysicsContactDelegate {
     }
     */
     
+    
+    
+    
+    //检测碰撞开始
     func didBegin(_ contact: SKPhysicsContact) {
         
         if(collision_start == false)
@@ -472,7 +487,7 @@ class NinjaGameScene: SKScene, SKPhysicsContactDelegate {
         
     }
     
-    
+    //检测碰撞结束
     func didEnd(_ contact: SKPhysicsContact) {
         //let hero = childNode(withName: NinjaGameSceneChildName.HeroName.rawValue) as! SKSpriteNode
         //hero.run(SKAction.rotate(byAngle: 3.14159265357, duration: 0.5))
@@ -591,6 +606,8 @@ class NinjaGameScene: SKScene, SKPhysicsContactDelegate {
     }
 
     
+    
+    //Ninja移动
     fileprivate func heroGo(_ pass:Bool) {
         
         collision_start = false
@@ -665,7 +682,7 @@ class NinjaGameScene: SKScene, SKPhysicsContactDelegate {
 
 
 
-
+    
     fileprivate func moveStackAndCreateNew() {
     let action = SKAction.move(by: CGVector(dx: -nextLeftStartX + (rightStack?.frame.size.width)! + playAbleRect.origin.x - 2, dy: 0), duration: 0.3)
     rightStack?.run(action)

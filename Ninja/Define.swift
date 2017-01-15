@@ -13,7 +13,7 @@ import CoreGraphics
 
 
 
-
+//屏幕大小
 let DefinedScreenWidth:CGFloat = 1536
 let DefinedScreenHeight:CGFloat = 2048
 
@@ -22,7 +22,7 @@ let DefinedScreenHeight:CGFloat = 2048
 
 
 
-
+//ChildNode Name
 enum NinjaGameSceneChildName : String {
     case BackgroundName = "background"
     case HeroName = "hero"
@@ -47,7 +47,7 @@ enum NinjaGameSceneChildName : String {
 
 
 
-
+//Z轴参数，用于判定显示覆盖
 enum NinjaGameSceneZposition: CGFloat {
     case backgroundZposition = 0
     case stackZposition = 10
@@ -64,7 +64,7 @@ enum NinjaGameSceneZposition: CGFloat {
 
 
 
-
+//动作名
 enum NinjaGameSceneActionKey: String {
     case WalkAction = "walk"
     case MonsterAction = "monster_action"
