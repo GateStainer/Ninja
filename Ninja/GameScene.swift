@@ -6,6 +6,10 @@
 //  Copyright © 2016 Apple inc. All rights reserved.
 //
 
+
+
+
+
 import SpriteKit
 import GameplayKit
 
@@ -196,6 +200,28 @@ class NinjaGameScene: SKScene, SKPhysicsContactDelegate {
     }()
     
     
+    lazy var birdAction:SKAction = {
+        
+        let action = SKAction.moveBy(x: -DefinedScreenWidth, y: 0, duration: 8)
+        
+        return action
+    }()
+    
+    lazy var bird_moveAction:SKAction = {
+        var textures:[SKTexture] = []
+        for i in 1...7{
+            
+            let texture = SKTexture(imageNamed: "bird\(i).png")
+            textures.append(texture)
+        }
+        
+        let action = SKAction.animate(with: textures, timePerFrame:0.4,resize: true, restore: true)
+        
+        return SKAction.repeatForever(action)
+    }()
+    
+    
+    
     lazy var walkAction:SKAction = {
         var textures:[SKTexture] = []
         for i in 0...1 {
@@ -320,6 +346,9 @@ class NinjaGameScene: SKScene, SKPhysicsContactDelegate {
         loadBlood()
         loadTip()
         loadGameOverLayer()
+        loadBird()
+        
+        
         leftStack = loadStacks(false, startLeftPoint: playAbleRect.origin.x)
         self.removeMidTouch(false, left:true)
         loadHero()
@@ -826,6 +855,10 @@ private extension NinjaGameScene {
                 
                 self.loadMonster()
                 
+                self.loadBird()
+                
+                
+                
                 if(self.score >= 5)
                 {
                     self.loadMonster2()
@@ -923,6 +956,25 @@ private extension NinjaGameScene {
         
     }
 
+    
+    
+    func loadBird() {
+        let bird = SKSpriteNode(imageNamed: "bird1.png")
+        bird.zPosition = NinjaGameSceneZposition.birdZposition.rawValue
+        bird.anchorPoint = CGPoint(x:0.5, y:0.5)
+        bird.position = CGPoint(x: (DefinedScreenWidth / 2 - 200) , y: (DefinedScreenHeight / 2) - 600)
+        bird.name = NinjaGameSceneChildName.BirdName.rawValue
+        
+        addChild(bird)
+        
+        bird.run(birdAction, withKey:NinjaGameSceneActionKey.BirdAction.rawValue)
+        
+        bird.run(bird_moveAction,withKey:NinjaGameSceneActionKey.BirdMoveAction.rawValue)
+        
+        
+    }
+    
+    
     func loadMonster2() {
         
         
